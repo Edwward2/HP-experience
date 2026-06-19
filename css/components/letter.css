@@ -1,0 +1,512 @@
+/* =========================
+   LETTER SCENE
+========================= */
+
+#letter-scene {
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    z-index: 20;
+}
+
+/* =========================
+   LETTER CONTAINER
+========================= */
+
+.letter-container {
+
+    position: relative;
+
+    width: min(550px, 90vw);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    perspective: 1400px;
+}
+
+/* =========================
+   ENVELOPE
+========================= */
+
+#envelope {
+
+    width: 100%;
+
+    display: block;
+
+    user-select: none;
+
+    pointer-events: none;
+
+    transform-origin: center center;
+    
+    transform: rotate(-90deg);
+
+
+    filter:
+
+        drop-shadow(
+            0 0 25px rgba(255,255,255,.15)
+        )
+
+        drop-shadow(
+            0 0 60px rgba(212,175,55,.08)
+        );
+
+    animation:
+        envelopeFloat
+        4s ease-in-out infinite;
+}
+
+@keyframes envelopeFloat {
+
+    0% {
+
+        transform:
+            rotate(-90deg)
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            rotate(-90deg)
+            translateY(-10px);
+
+    }
+
+    100% {
+
+        transform:
+            rotate(-90deg)
+            translateY(0);
+
+    }
+
+
+}
+
+/* =========================
+   SEAL
+========================= */
+
+#seal {
+
+    position: absolute;
+
+    width: 90px;
+
+    left: 50%;
+
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    cursor: pointer;
+
+    z-index: 10;
+
+    transition:
+        transform .3s ease;
+
+    animation:
+        sealGlow 2s ease-in-out infinite;
+}
+
+#seal:hover {
+
+    transform:
+        translate(-50%, -50%)
+        scale(1.1);
+}
+
+/* =========================
+   SEAL GLOW
+========================= */
+
+@keyframes sealGlow {
+
+    0% {
+
+        filter:
+            drop-shadow(0 0 6px gold);
+
+    }
+
+    50% {
+
+        filter:
+            drop-shadow(0 0 25px gold);
+
+    }
+
+    100% {
+
+        filter:
+            drop-shadow(0 0 6px gold);
+
+    }
+
+}
+
+/* =========================
+   LETTER CONTENT
+========================= */
+
+.letter {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 1rem;
+
+    opacity: 0;
+}
+
+/* =========================
+   LETTER IMAGE
+========================= */
+
+#letter-image {
+
+    width: min(850px, 90vw);
+
+    display: block;
+
+    filter:
+
+        drop-shadow(
+            0 15px 40px rgba(0,0,0,.45)
+        );
+}
+
+/* =========================
+   FUTURE PLAYER NAME
+========================= */
+
+#player-name {
+
+    position: absolute;
+
+    top: 38%;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    color: #2b1f0d;
+
+    font-size: 1.3rem;
+
+    font-weight: bold;
+
+    pointer-events: none;
+}
+
+/* =========================
+   OPEN ENVELOPE
+========================= */
+
+.opening {
+
+    animation:
+        envelopeDisappear
+        1s ease forwards;
+}
+
+@keyframes envelopeDisappear {
+
+    0% {
+
+        opacity: 1;
+
+        transform:
+            scale(1)
+            rotate(0deg);
+
+    }
+
+    100% {
+
+        opacity: 0;
+
+        transform:
+            scale(1.2)
+            rotate(8deg);
+
+    }
+
+}
+
+/* =========================
+   REVEAL LETTER
+========================= */
+
+.show-letter {
+
+    animation:
+        revealLetter
+        1s ease forwards;
+}
+
+@keyframes revealLetter {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            translateY(60px)
+            scale(.9);
+
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+/* =========================
+   DESTROY LETTER
+========================= */
+
+.destroy-letter {
+
+    animation:
+        destroyLetter
+        1.2s ease forwards;
+}
+
+@keyframes destroyLetter {
+
+    0% {
+
+        opacity: 1;
+
+        transform:
+            scale(1);
+
+    }
+
+    100% {
+
+        opacity: 0;
+
+        transform:
+            scale(1.3);
+
+    }
+
+}
+
+/* =========================
+LETTER ACTIONS
+========================= */
+
+.letter-actions {
+
+    display: flex;
+
+    gap: 1rem;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+}
+
+/* =========================
+ACCEPT BUTTON
+========================= */
+
+#accept-btn {
+
+    border: none;
+
+    outline: none;
+
+    padding:
+        1rem 2rem;
+
+    border-radius:
+        var(--radius-small);
+
+    background:
+        var(--color-gold);
+
+    color:
+        var(--color-dark);
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform .25s ease,
+        opacity .25s ease;
+
+}
+
+#accept-btn:hover {
+
+    transform:
+        translateY(-2px);
+
+}
+
+#accept-btn:active {
+
+    transform:
+        scale(.97);
+
+}
+
+/* =========================
+DECLINE BUTTON
+========================= */
+
+#decline-btn {
+
+    border: 1px solid rgba(255,255,255,.25);
+
+    outline: none;
+
+    padding:
+        1rem 2rem;
+
+    border-radius:
+        var(--radius-small);
+
+    background:
+        rgba(0,0,0,.35);
+
+    color:
+        white;
+
+    cursor: pointer;
+
+    transition:
+        transform .25s ease,
+        background .25s ease;
+
+}
+
+#decline-btn:hover {
+
+    transform:
+        translateY(-2px);
+
+    background:
+        rgba(255,255,255,.08);
+
+}
+
+#decline-btn:active {
+
+    transform:
+        scale(.97);
+
+}
+
+/* =========================
+   FUTURE MAGIC PARTICLES
+========================= */
+
+.letter-particles {
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 15;
+}
+
+/* =========================
+   MUGGLE MESSAGE
+========================= */
+
+.muggle-message {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    gap: 1rem;
+
+    color: white;
+
+    min-height: 70vh;
+
+    animation:
+        fadeMuggle
+        2s ease;
+}
+
+.muggle-message h1 {
+
+    color: gold;
+
+    font-size: 3rem;
+
+    text-shadow:
+        0 0 20px gold;
+}
+
+.muggle-message p {
+
+    font-size: 1.2rem;
+
+    opacity: .85;
+}
+
+@keyframes fadeMuggle {
+
+    from {
+
+        opacity: 0;
+
+    }
+
+    to {
+
+        opacity: 1;
+
+    }
+}

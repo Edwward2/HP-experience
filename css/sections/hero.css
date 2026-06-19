@@ -1,0 +1,278 @@
+/* =========================
+   INTRO SCENE
+========================= */
+
+#intro {
+
+    position: absolute;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            #1b2238 0%,
+            #10192e 40%,
+            #05070d 100%
+        );
+}
+
+/* =========================
+   MOON
+========================= */
+
+#moon {
+
+    position: absolute;
+
+    top: 80px;
+
+    right: 100px;
+
+    width: 220px;
+
+    opacity: .95;
+
+    z-index: 2;
+
+    animation:
+        moonGlow 6s ease-in-out infinite;
+
+    filter:
+
+        drop-shadow(
+            0 0 30px
+            rgba(255,255,255,.25)
+        )
+
+        drop-shadow(
+            0 0 80px
+            rgba(255,255,255,.08)
+        );
+}
+
+@keyframes moonGlow {
+
+    0% {
+
+        transform: scale(1);
+
+    }
+
+    50% {
+
+        transform: scale(1.03);
+
+    }
+
+    100% {
+
+        transform: scale(1);
+
+    }
+
+}
+
+/* =========================
+   STARS CONTAINER
+========================= */
+
+#stars-container {
+
+    position: absolute;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    z-index: 1;
+}
+
+/* =========================
+   STARS
+========================= */
+
+.star {
+
+    position: absolute;
+
+    background: white;
+
+    border-radius: 50%;
+
+    animation:
+        twinkle linear infinite;
+}
+
+@keyframes twinkle {
+
+    0% {
+
+        opacity: .15;
+
+    }
+
+    50% {
+
+        opacity: 1;
+
+    }
+
+    100% {
+
+        opacity: .15;
+
+    }
+
+}
+
+/* =========================
+   FOG
+========================= */
+
+.fog {
+
+    position: absolute;
+
+    inset: 0;
+
+    opacity: .15;
+
+    filter: blur(60px);
+
+    pointer-events: none;
+
+    z-index: 3;
+}
+
+/* =========================
+   FOG LAYER 1
+========================= */
+
+.fog-1 {
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            rgba(255,255,255,.25),
+            transparent 70%
+        );
+
+    animation:
+        fogMove1 25s linear infinite;
+}
+
+/* =========================
+   FOG LAYER 2
+========================= */
+
+.fog-2 {
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            rgba(255,255,255,.18),
+            transparent 70%
+        );
+
+    animation:
+        fogMove2 35s linear infinite;
+}
+
+@keyframes fogMove1 {
+
+    from {
+
+        transform:
+            translateX(-10%)
+            translateY(0);
+
+    }
+
+    to {
+
+        transform:
+            translateX(10%)
+            translateY(-2%);
+
+    }
+
+}
+
+@keyframes fogMove2 {
+
+    from {
+
+        transform:
+            translateX(10%)
+            translateY(0);
+
+    }
+
+    to {
+
+        transform:
+            translateX(-10%)
+            translateY(2%);
+
+    }
+
+}
+
+/* =========================
+   HEDWIG
+========================= */
+
+#hedwig {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 35%;
+
+    width: 320px;
+
+    transform:
+        translateX(-50%);
+
+    transform-origin:
+        center center;
+
+    z-index: 20;
+
+    will-change:
+        transform,
+        opacity;
+}
+
+/* =========================
+   FUTURE EFFECT LAYERS
+========================= */
+
+.magic-particles {
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 15;
+}
+
+.magic-light {
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 12;
+}

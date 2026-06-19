@@ -1,0 +1,92 @@
+/* =========================
+   STATION SCENE
+========================= */
+
+#station-scene {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: none;
+
+    justify-content: center;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    background:
+
+        linear-gradient(
+            to bottom,
+            #0d0f16,
+            #1d2234
+        );
+
+    z-index: var(--z-overlay);
+
+}
+
+/* =========================
+   PLATFORMS
+========================= */
+
+.platforms {
+
+    display: flex;
+
+    gap: 2rem;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+/* =========================
+   PLATFORM CARD
+========================= */
+
+.platforms div {
+
+    padding:
+
+        1rem
+        2rem;
+
+    border-radius:
+
+        var(--radius-medium);
+
+    background:
+
+        rgba(255,255,255,.05);
+
+    backdrop-filter:
+
+        blur(10px);
+
+    transition:
+
+        var(--transition-fast);
+
+}
+
+/* =========================
+   MAGIC PLATFORM
+========================= */
+
+#magic-gap {
+
+    color:
+
+        var(--color-gold);
+
+    box-shadow:
+
+        var(--shadow-magic);
+
+}

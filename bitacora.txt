@@ -1,0 +1,320 @@
+para levantar el servicio 
+
+python3 -m http.server 5500
+
+
+harry-potter-experience/
+
+│
+├── index.html
+│
+├── assets
+│
+│   ├── images
+│   │
+│   ├── audio
+│   │
+│   ├── video
+│   │
+│   ├── svg
+│   │
+│   └── icons
+│
+├── css
+│
+├── js
+│
+├── data
+│
+└── docs
+
+assets/
+
+├── images
+
+│   ├── intro
+│   │   ├── moon.png
+│   │   ├── hedwig.png
+│   │   ├── stars.png
+│   │
+│   ├── letter
+│   │   ├── envelope.png
+│   │   ├── seal.png
+│   │   └── letter.png
+│   │
+│   ├── diagon
+│   │   ├── wall.png
+│   │   ├── diagon-alley.jpg
+│   │   ├── ollivanders.png
+│   │   ├── gringotts.png
+│   │   └── pets-shop.png
+│   │
+│   ├── station
+│   │   ├── platform.jpg
+│   │   ├── wall.jpg
+│   │   └── magic-door.png
+│   │
+│   ├── train
+│   │   ├── train.png
+│   │   ├── mountains.jpg
+│   │   ├── lake.jpg
+│   │   └── forest.jpg
+│   │
+│   ├── castle
+│   │   ├── castle.png
+│   │   ├── lights.png
+│   │   ├── moon.png
+│   │   └── clouds.png
+│   │
+│   ├── sorting
+│   │   ├── hat.png
+│   │   ├── gryffindor.png
+│   │   ├── ravenclaw.png
+│   │   ├── hufflepuff.png
+│   │   └── slytherin.png
+│   │
+│   ├── astronomy
+│   │
+│   ├── forest
+│   │
+│   ├── insectarium
+│   │
+│   ├── quidditch
+│   │
+│   ├── chamber
+│   │
+│   └── map
+│
+├── audio
+
+│   ├── intro
+│   ├── castle
+│   ├── forest
+│   ├── chamber
+│   └── spells
+
+├── svg
+
+│   ├── particles
+│   ├── stars
+│   ├── constellations
+│   ├── marauders-map
+│   └── spells
+
+└── icons
+
+    ├── inventory
+    ├── navigation
+    └── rewards
+
+    css/
+
+├── main.css
+│
+├── base
+│
+│   ├── reset.css
+│   ├── variables.css
+│   ├── typography.css
+│   └── animations.css
+│
+├── layout
+│
+│   ├── app.css
+│   ├── scene.css
+│   └── responsive.css
+│
+├── components
+│
+│   ├── button.css
+│   ├── modal.css
+│   ├── navbar.css
+│   ├── inventory.css
+│   ├── loader.css
+│   ├── particles.css
+│   └── card.css
+│
+└── scenes
+│
+    ├── intro.css
+    ├── letter.css
+    ├── diagon.css
+    ├── station.css
+    ├── train.css
+    ├── castle.css
+    ├── sorting.css
+    ├── astronomy.css
+    ├── forest.css
+    ├── insectarium.css
+    ├── quidditch.css
+    ├── chamber.css
+    ├── map.css
+    └── ending.css
+
+    js/
+
+├── core
+│
+│   ├── app.js
+│   ├── config.js
+│   ├── game-state.js
+│   └── constants.js
+│
+├── managers
+│
+│   ├── scene-manager.js
+│   ├── audio-manager.js
+│   ├── inventory-manager.js
+│   ├── save-manager.js
+│   └── animation-manager.js
+│
+├── modules
+│
+│   ├── intro.js
+│   ├── letter.js
+│   ├── diagon.js
+│   ├── station.js
+│   ├── train.js
+│   ├── castle.js
+│   ├── sorting.js
+│   ├── astronomy.js
+│   ├── forest.js
+│   ├── insectarium.js
+│   ├── quidditch.js
+│   ├── chamber.js
+│   ├── marauders-map.js
+│   └── ending.js
+│
+├── games
+│
+│   ├── brick-puzzle.js
+│   ├── constellation-game.js
+│   ├── snitch-game.js
+│   ├── serpent-puzzle.js
+│   └── butterfly-game.js
+│
+├── effects
+│
+│   ├── particles.js
+│   ├── fog.js
+│   ├── stars.js
+│   ├── magic.js
+│   └── transitions.js
+│
+└── utils
+│
+    ├── helpers.js
+    ├── dom.js
+    ├── random.js
+    └── storage.js
+    |--animation.js
+
+
+
+    data/
+
+├── houses.js
+├── creatures.js
+├── constellations.js
+├── inventory-items.js
+├── dialogues.js
+├── achievements.js
+└── puzzles.js
+
+
+
+
+
+
+FASE 0.3
+Crear TODAS las escenas vacías
+
+En vez de hacer una por una.
+
+Creamos desde ahora:
+
+<section id="intro-scene"></section>
+
+<section id="letter-scene"></section>
+
+<section id="diagon-scene"></section>
+
+<section id="station-scene"></section>
+
+<section id="train-scene"></section>
+
+<section id="castle-scene"></section>
+
+<section id="sorting-scene"></section>
+
+<section id="astronomy-scene"></section>
+
+<section id="forest-scene"></section>
+
+<section id="insectarium-scene"></section>
+
+<section id="quidditch-scene"></section>
+
+<section id="chamber-scene"></section>
+
+<section id="map-scene"></section>
+
+<section id="ending-scene"></section>
+
+Después nunca agregamos más IDs.
+
+FASE 0.4
+Crear CSS base definitivo
+
+En vez de:
+
+intro.css
+
+station.css
+
+castle.css
+
+incompletos.
+
+Creamos todos desde ahora.
+
+Aunque estén vacíos.
+
+intro.css
+letter.css
+diagon.css
+station.css
+train.css
+castle.css
+sorting.css
+astronomy.css
+forest.css
+insectarium.css
+quidditch.css
+chamber.css
+map.css
+ending.css
+
+Así nunca debemos reorganizar carpetas.
+
+FASE 0.5
+Crear todos los módulos
+
+Aunque estén vacíos.
+
+intro.js
+letter.js
+diagon.js
+station.js
+train.js
+castle.js
+sorting.js
+astronomy.js
+forest.js
+insectarium.js
+quidditch.js
+chamber.js
+marauders-map.js
+ending.js
+
+
