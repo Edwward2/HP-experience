@@ -1,0 +1,210 @@
+@import url('./base/reset.css');
+@import url('./base/variables.css');
+@import url('./base/typography.css');
+
+@import url('./components/letter.css');
+@import url('./components/loader.css');
+@import url('./components/navbar.css');
+
+@import url('./sections/hero.css');
+@import url('./sections/station.css');
+@import url('./sections/castle.css');
+@import url('./sections/diagon.css');
+@import url('./sections/ollivanders.css');
+
+/* =========================
+   GLOBAL
+========================= */
+
+html,
+body {
+
+    width: 100%;
+
+    min-height: 100%;
+
+    margin: 0;
+
+    padding: 0;
+}
+
+body {
+
+    background:
+        var(--color-dark);
+
+    color:
+        var(--color-white);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    overflow: hidden;
+}
+
+/* =========================
+   EXPERIENCE ROOT
+========================= */
+
+#experience {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 100vh;
+
+    overflow: hidden;
+}
+
+/* =========================
+   SCENE SYSTEM
+========================= */
+
+.scene {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+
+        opacity
+        var(--transition-normal)
+        ease,
+
+        visibility
+        var(--transition-normal)
+        ease;
+}
+
+.scene-active {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+    z-index: var(--z-content);
+}
+
+.scene-hidden {
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+}
+
+/* =========================
+   SCENE TRANSITION
+========================= */
+
+.scene-fade-out {
+
+    animation:
+        sceneFadeOut
+        var(--transition-slow)
+        forwards;
+}
+
+@keyframes sceneFadeOut {
+
+    from {
+
+        opacity: 1;
+
+    }
+
+    to {
+
+        opacity: 0;
+
+    }
+}
+
+/* =========================
+   INTRO
+========================= */
+
+#intro {
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            #18213a,
+            #06080f
+        );
+}
+
+/* =========================
+   STARS
+========================= */
+
+#stars-container {
+
+    position: absolute;
+
+    inset: 0;
+
+    overflow: hidden;
+}
+
+.star {
+
+    position: absolute;
+
+    border-radius: 50%;
+}
+
+/* =========================
+   FOG
+========================= */
+
+.fog {
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+}
+
+/* =========================
+   COMMON HIDDEN
+========================= */
+
+.hidden {
+
+    display: none !important;
+}
+
+/* =========================
+   COMMON SHOW
+========================= */
+
+.visible {
+
+    display: block !important;
+}

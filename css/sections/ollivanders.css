@@ -1,0 +1,116 @@
+#ollivanders {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: #111;
+
+    overflow: hidden;
+}
+
+.ollivanders-container {
+
+    width: 100%;
+
+    height: 100vh;
+
+    position: relative;
+}
+
+#ollivanders-shop {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: 1;
+}
+
+#ollivanders-ui {
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 40px;
+
+    transform: translateX(-50%);
+
+    text-align: center;
+
+    z-index: 20;
+
+    width: 90%;
+
+    max-width: 1200px;
+}
+
+#ollivanders-dialog {
+
+    margin: 1rem 0;
+
+    font-size: 1.2rem;
+}
+
+#wand-selection {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 1rem;
+
+    margin-top: 1rem;
+}
+
+#wand-carousel-image {
+
+    width: 100%;
+
+    max-width: 1000px;
+
+    border-radius: 12px;
+}
+
+#wand-buttons {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 1rem;
+
+    margin-top: 1rem;
+}
+
+#wand-buttons button {
+
+    padding: .8rem;
+
+    cursor: pointer;
+}
+
+#wand-prev,
+#wand-next {
+
+    padding: 1rem;
+
+    cursor: pointer;
+}
+
+.hidden {
+
+    display: none !important;
+}

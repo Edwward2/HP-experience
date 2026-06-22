@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Harry Potter Experience
+    </title>
+
+    <link rel="stylesheet" href="./css/main.css">
+
+</head>
+
+<body>
+
+    <main id="experience">
+
+        <!-- ======================
+         GLOBAL EFFECTS
+    ======================= -->
+
+        <div id="global-particles"></div>
+
+        <div id="global-effects"></div>
+
+        <div id="global-ui"></div>
+
+        <!-- ======================
+         INTRO
+    ======================= -->
+
+        <section id="intro" class="scene">
+
+            <div id="stars-container"></div>
+
+            <div class="fog fog-1"></div>
+
+            <div class="fog fog-2"></div>
+
+            <img id="moon" src="./assets/images/moon/moon.png" alt="Moon">
+
+            <img id="hedwig" src="./assets/images/hedwig/hedwig.png" alt="Hedwig">
+
+        </section>
+
+        <!-- ======================
+         LETTER
+    ======================= -->
+
+        <section id="letter" class="scene">
+
+            <div class="letter-container hidden">
+
+                <img id="envelope" src="./assets/images/letter/envelope.jpg" alt="Envelope">
+
+                <img id="seal" src="./assets/images/letter/seal.png" alt="Seal">
+
+                <div id="letter-content" class="letter hidden">
+
+                    <img id="letter-image" src="./assets/images/letter/letter.jpg" alt="Letter">
+
+                    <div id="letter-player-name">
+
+                    </div>
+
+                    <div class="letter-actions">
+
+                        <button id="accept-btn">
+
+                            Accept Invitation
+
+                        </button>
+
+                        <button id="decline-btn">
+
+                            Decline
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ======================
+         DIAGON
+    ======================= -->
+
+        <section id="diagon" class="scene">
+
+            <div class="diagon-container">
+
+                <img id="diagon-image" src="./assets/images/diagon/muro_diagon.png     " alt="Diagon Alley">
+
+                <div id="diagon-ui">
+
+                    <h2 id="diagon-title">
+
+                        The Entrance To Diagon Alley
+
+                    </h2>
+
+                    <p id="diagon-description">
+
+                        Tap the hidden bricks to reveal the wizarding world.
+
+                    </p>
+
+                    <!-- PASO 1 -->
+                    <button id="open-wall-btn">
+
+                        Open Wall
+
+                    </button>
+
+                    <!-- PASO 2 -->
+                    <button id="enter-diagon-btn" class="hidden">
+
+                        Enter Diagon Alley
+
+                    </button>
+
+                    <!-- PASO 3 -->
+                    <div id="diagon-shops" class="hidden">
+
+                        <button id="visit-ollivanders">
+
+                            Ollivanders
+
+                        </button>
+
+                        <button id="visit-pets">
+
+                            Magical Pets
+
+                        </button>
+
+                        <button id="visit-weasley">
+
+                            Weasleys Wizard Wheezes
+
+                        </button>
+
+                    </div>
+
+                    <!-- PROGRESO -->
+                    <div id="diagon-progress" class="hidden">
+
+                        <div id="wand-status">
+
+                            Wand: ❌
+
+                        </div>
+
+                        <div id="pet-status">
+
+                            Pet: ❌
+
+                        </div>
+
+                        <div id="item-status">
+
+                            Item: ❌
+
+                        </div>
+
+                    </div>
+
+                    <!-- DESBLOQUEADO AL FINAL -->
+                    <div id="station-access" class="hidden">
+
+                        <button id="go-station">
+
+                            Go To King's Cross Station
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+        <!-- ======================
+         Ollivanders
+    ======================= -->
+
+
+        <section id="ollivanders" class="scene">
+
+            <div class="ollivanders-container">
+
+                <img id="ollivanders-shop" src="./assets/images/ollivanders/ollivanders.png" alt="Ollivanders">
+
+                <div id="ollivanders-ui">
+
+                    <h1>
+
+                        Ollivanders
+
+                    </h1>
+
+                    <div id="ollivanders-dialog">
+
+                        Choose a wand.
+
+                    </div>
+
+                    <button id="start-wand-selection">
+
+                        Begin Selection
+
+                    </button>
+
+                    <div id="wand-selection" class="hidden">
+
+                        <button id="wand-prev">
+
+                            ◀
+
+                        </button>
+
+                        <img id="wand-carousel-image" src="./assets/images/ollivanders/wands_1.png" alt="Wands">
+
+                        <button id="wand-next">
+
+                            ▶
+
+                        </button>
+
+                        <div id="wand-buttons">
+
+                            <button data-wand="1">
+                                Wand 1
+                            </button>
+
+                            <button data-wand="2">
+                                Wand 2
+                            </button>
+
+                            <button data-wand="3">
+                                Wand 3
+                            </button>
+
+                            <button data-wand="4">
+                                Wand 4
+                            </button>
+
+                            <button data-wand="5">
+                                Wand 5
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <button id="return-diagon" class="hidden">
+
+                        Return To Diagon Alley
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================
+         Magical Pets
+    ======================= -->
+
+
+        <section id="pets" class="scene">
+
+            <div class="pets-container">
+
+                <img id="pets-shop" src="./assets/images/pets/pets_shop.png" alt="Magical Pets">
+
+                <div id="pets-ui">
+
+                    <h1>
+
+                        Magical Pets
+
+                    </h1>
+
+                    <div id="pets-dialog">
+
+                        Every Hogwarts student needs a companion.
+
+                    </div>
+
+                    <button id="start-pet-selection">
+
+                        Choose Your Pet
+
+                    </button>
+
+                    <div id="pets-selection" class="hidden">
+
+                        <img id="pets-image" src="./assets/images/pets/pets_selections.png" alt="Pets">
+
+                        <div id="pet-buttons">
+
+                            <button data-pet="owl">
+
+                                Lechuza
+
+                            </button>
+
+                            <button data-pet="rat">
+
+                                Rata
+
+                            </button>
+
+                            <button data-pet="toad">
+
+                                Toad
+
+                            </button>
+
+                            <button data-pet="cat">
+
+                                Cat
+
+                            </button>
+
+                            <button data-pet="dragon">
+
+                                Dragon
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <button id="return-diagon-pets" class="hidden">
+
+                        Return To Diagon Alley
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================
+         weasley Wizard
+    ======================= -->
+        <section id="weasley" class="scene">
+
+            <div class="weasley-container">
+
+                <img id="weasley-shop" src="./assets/images/weasley/weasley_shop.png" alt="Weasleys Wizard Wheezes">
+
+                <div id="weasley-ui">
+
+                    <h1>
+
+                        Weasleys Wizard Wheezes
+
+                    </h1>
+
+                    <div id="weasley-dialog">
+
+                        Fred and George have hidden magical objects around the shop.
+
+                    </div>
+
+                    <button id="start-weasley-search">
+
+                        Start Search
+
+                    </button>
+
+                    <div id="weasley-search" class="hidden">
+
+                        <img id="weasley-image" src="./assets/images/weasley/weasley_search.png" alt="Search Objects">
+
+                        <div id="weasley-checklist">
+
+                            <button data-item="1">
+                                Object 1
+                            </button>
+
+                            <button data-item="2">
+                                Object 2
+                            </button>
+
+                            <button data-item="3">
+                                Object 3
+                            </button>
+
+                            <button data-item="4">
+                                Object 4
+                            </button>
+
+                            <button data-item="5">
+                                Object 5
+                            </button>
+
+                            <button data-item="6">
+                                Object 6
+                            </button>
+
+                            <button data-item="7">
+                                Object 7
+                            </button>
+
+                            <button data-item="8">
+                                Object 8
+                            </button>
+
+                            <button data-item="9">
+                                Object 9
+                            </button>
+
+                            <button data-item="10">
+                                Object 10
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <button id="return-diagon-weasley" class="hidden">
+
+                        Return To Diagon Alley
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ======================
+         STATION
+    ======================= -->
+
+        <section id="station" class="scene">
+
+            <div class="station-container">
+
+                <img id="station-image" src="./assets/images/station/station.png" alt="King's Cross">
+
+                <div id="station-ui">
+
+                    <h1>
+
+                        King's Cross Station
+
+                    </h1>
+
+                    <div id="station-dialog">
+
+                        Platform 9¾ awaits.
+
+                    </div>
+
+                    <button id="approach-platform">
+
+                        Go To Platform 9¾
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ======================
+             TRAIN
+        ======================= -->
+
+        <section id="train" class="scene">
+
+            <div class="train-container">
+
+                <img id="train-image" src="./assets/images/train/train_corridor.png" alt="Hogwarts Express">
+
+                <div id="train-ui">
+
+                    <h1>
+
+                        Hogwarts Express
+
+                    </h1>
+
+                    <div id="train-dialog">
+
+                        Explore the train.
+
+                    </div>
+
+                    <div id="train-options">
+
+                        <button id="window-room">
+
+                            Window Compartment
+
+                        </button>
+
+                        <button id="frog-room">
+
+                            Chocolate Frog Challenge
+
+                        </button>
+
+                    </div>
+
+                    <div id="frog-game" class="hidden">
+
+                        <div id="frog-counter">
+
+                            Frogs Caught: 0 / 5
+
+                        </div>
+
+                        <button id="frog-button">
+
+                            🐸
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+        <!-- ======================
+        ARRIVAL HOGWARTS
+    ====================== -->
+
+        <section id="arrival-hogwarts" class="scene">
+
+            <div class="arrival-container">
+
+                <img id="arrival-image" src="./assets/images/arrival/arrival_hogwarts.png" alt="Hogwarts">
+
+                <div id="arrival-ui">
+
+                    <h1>
+
+                        HOGWARTS
+
+                    </h1>
+
+                    <div id="arrival-dialog">
+
+                        Welcome to Hogwarts.
+
+                        First-year students must proceed to the boats.
+
+                    </div>
+
+                    <button id="go-to-lake">
+
+                        Go To The Boats
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ======================
+            LAKE PATH
+        ====================== -->
+
+        <section id="lake-path" class="scene">
+
+            <div class="lake-path-container">
+
+                <img id="black-lake-image" src="./assets/images/lake/black_lake.png" alt="Black Lake">
+
+                <div id="lake-path-ui">
+
+                    <h1>
+
+                        Black Lake
+
+                    </h1>
+
+                    <div id="lake-path-dialog">
+
+                        Proceed to the boats.
+
+                        The lake crossing is about to begin.
+
+                    </div>
+
+                    <button id="start-lake-crossing">
+
+                        Continue
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ======================
+            BLACK LAKE
+        ====================== -->
+
+        <section id="black-lake" class="scene">
+
+            <div class="black-lake-container">
+
+                <img id="black-lake-image" src="./assets/images/lake/boats_lake.png" alt="Black Lake">
+
+                <div id="black-lake-ui">
+
+                    <h1>
+
+                        Black Lake
+
+                    </h1>
+
+                    <div id="black-lake-dialog">
+
+                        Keep the boat steady.
+
+                        Reach the opposite shore.
+
+                    </div>
+
+                    <button id="begin-crossing">
+
+                        Begin Crossing
+
+                    </button>
+
+                    <div id="boat-game" class="hidden">
+
+                        <div id="boat-timer">
+
+                            Time: 15
+
+                        </div>
+
+                        <div id="boat-area">
+
+                            <div id="safe-zone">
+
+                            </div>
+
+                            <div id="boat-marker">
+
+                                🚣
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ======================
+            CASTLE
+        ====================== -->
+
+        <section id="castle" class="scene">
+
+            <div class="castle-container">
+
+                <img id="castle-image" src="./assets/images/hogwarts/hogwarts_gates.png" alt="Hogwarts Gates">
+
+                <div id="castle-ui">
+
+                    <h1>
+
+                        Hogwarts Castle
+
+                    </h1>
+
+                    <div id="castle-dialog">
+
+                        You have arrived at Hogwarts.
+
+                        The castle doors are now open.
+
+                    </div>
+
+                    <button id="enter-great-hall">
+
+                        Enter The Great Hall
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ======================
+            GREAT HALL
+        ====================== -->
+
+        <section id="great-hall" class="scene">
+
+            <div class="great-hall-container">
+
+                <img id="great-hall-image" src="./assets/images/hogwarts/hogwarts_gates.png" alt="Great Hall">
+
+                <div id="great-hall-ui">
+
+                    <h1>
+
+                        Great Hall
+
+                    </h1>
+
+                    <div id="great-hall-dialog">
+
+                        Welcome to the Great Hall.
+
+                        Observe the enchanted ceiling.
+
+                    </div>
+
+                    <button id="observe-ceiling">
+
+                        Observe Ceiling
+
+                    </button>
+
+                    <button id="go-to-sorting" class="hidden">
+
+                        Approach The Sorting Hat
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ======================
+            SORTING CEREMONY
+        ====================== -->
+
+        <section id="sorting" class="scene">
+
+            <div class="sorting-container">
+
+                <img id="sorting-image" src="./assets/images/hogwarts/sorting_hat.png" alt="Sorting Hat">
+
+                <div id="sorting-ui">
+
+                    <h1>
+
+                        Sorting Ceremony
+
+                    </h1>
+
+                    <div id="sorting-dialog">
+
+                        The Sorting Hat is ready.
+
+                        Place the hat and discover your House.
+
+                    </div>
+
+                    <button id="start-sorting">
+
+                        Place The Sorting Hat
+
+                    </button>
+
+                    <div id="sorting-result" class="hidden">
+
+                    </div>
+
+                    <div id="sorting-actions" class="hidden">
+
+                        <button id="accept-house">
+
+                            Accept House
+
+                        </button>
+
+                        <button id="change-house">
+
+                            Choose Another House
+
+                        </button>
+
+                    </div>
+
+                    <div id="house-selection" class="hidden">
+
+                        <button class="house-option" data-house="Gryffindor">
+
+                            Gryffindor
+
+                        </button>
+
+                        <button class="house-option" data-house="Ravenclaw">
+
+                            Ravenclaw
+
+                        </button>
+
+                        <button class="house-option" data-house="Hufflepuff">
+
+                            Hufflepuff
+
+                        </button>
+
+                        <button class="house-option" data-house="Slytherin">
+
+                            Slytherin
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ======================
+         ASTRONOMY
+    ======================= -->
+
+        <section id="astronomy" class="scene">
+
+        </section>
+
+        <!-- ======================
+         FOREST
+    ======================= -->
+
+        <section id="forest" class="scene">
+
+        </section>
+
+        <!-- ======================
+         INSECTARIUM
+    ======================= -->
+
+        <section id="insectarium" class="scene">
+
+        </section>
+
+        <!-- ======================
+         QUIDDITCH
+    ======================= -->
+
+        <section id="quidditch" class="scene">
+
+        </section>
+
+        <!-- ======================
+         CHAMBER
+    ======================= -->
+
+        <section id="chamber" class="scene">
+
+        </section>
+
+        <!-- ======================
+         MARAUDERS MAP
+    ======================= -->
+
+        <section id="marauders-map" class="scene">
+
+        </section>
+
+        <!-- ======================
+         ENDING
+    ======================= -->
+
+        <section id="ending" class="scene">
+
+        </section>
+
+    </main>
+
+    <script type="module" src="./js/core/app.js">
+    </script>
+
+</body>
+
+</html>

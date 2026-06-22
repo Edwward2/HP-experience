@@ -1,0 +1,51 @@
+/* =========================
+   NAVIGATION
+========================= */
+
+.navbar {
+
+    position: fixed;
+
+    top: 20px;
+
+    right: 20px;
+
+    z-index:
+        var(--z-overlay);
+
+    display: flex;
+
+    gap: .5rem;
+
+}
+
+/* =========================
+   NAV BUTTON
+========================= */
+
+.nav-link {
+
+    padding:
+        .6rem
+        1rem;
+
+    border-radius:
+        var(--radius-small);
+
+    background:
+        rgba(255,255,255,.05);
+
+    backdrop-filter:
+        blur(10px);
+
+    transition:
+        var(--transition-fast);
+
+}
+
+.nav-link:hover {
+
+    background:
+        rgba(255,255,255,.15);
+
+}

@@ -1,0 +1,129 @@
+:root {
+
+/* =========================
+   COLORS
+========================= */
+
+--color-gold: #d4af37;
+
+--color-dark: #0b0b12;
+
+--color-night: #101522;
+
+--color-parchment: #efe2b8;
+
+--color-magic: #8ac6ff;
+
+--color-white: #ffffff;
+
+--color-black: #000000;
+
+--color-fog: rgba(255,255,255,.15);
+
+--color-shadow: rgba(0,0,0,.35);
+
+/* =========================
+   SCENE COLORS
+========================= */
+
+--color-station: #1b2235;
+
+--color-train: #241d14;
+
+--color-castle: #0f1320;
+
+--color-forest: #08110a;
+
+--color-chamber: #13210f;
+
+/* =========================
+   TRANSITIONS
+========================= */
+
+--transition-fast: .3s;
+
+--transition-normal: .6s;
+
+--transition-slow: 1s;
+
+--transition-cinematic: 2s;
+
+/* =========================
+   SHADOWS
+========================= */
+
+--shadow-magic:
+
+    0 0 10px rgba(138,198,255,.4),
+
+    0 0 25px rgba(138,198,255,.3);
+
+--shadow-card:
+
+    0 10px 30px rgba(0,0,0,.25);
+
+--shadow-deep:
+
+    0 20px 60px rgba(0,0,0,.45);
+
+--shadow-gold:
+
+    0 0 15px rgba(212,175,55,.5),
+
+    0 0 35px rgba(212,175,55,.25);
+
+/* =========================
+   BORDER RADIUS
+========================= */
+
+--radius-small: 8px;
+
+--radius-medium: 16px;
+
+--radius-large: 24px;
+
+--radius-round: 999px;
+
+/* =========================
+   LAYOUT
+========================= */
+
+--container-width: 1400px;
+
+--content-width: 1200px;
+
+--section-padding: 2rem;
+
+/* =========================
+   Z INDEX
+========================= */
+
+--z-background: 1;
+
+--z-content: 10;
+
+--z-scene: 20;
+
+--z-overlay: 50;
+
+--z-modal: 100;
+
+--z-loader: 999;
+
+/* =========================
+   INTRO
+========================= */
+
+--moon-size: 220px;
+
+--hedwig-size: 220px;
+
+/* =========================
+   LETTER
+========================= */
+
+--envelope-width: 500px;
+
+--seal-size: 90px;
+
+}
