@@ -4,7 +4,7 @@ import {
 from '../managers/scene-manager.js';
 
 import {
-    completeStore,
+    completeProgress,
     getProgress
 }
 from '../core/game-state.js';
@@ -114,7 +114,7 @@ export function initWeasley() {
 
                                 'All magical objects found!';
 
-                            completeStore(
+                            completeProgress(
                                 'weasleyCompleted'
                             );
 

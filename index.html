@@ -701,10 +701,9 @@
                 <div id="castle-ui">
 
                     <h1>
-
                         Hogwarts Castle
-
                     </h1>
+
 
                     <div id="castle-dialog">
 
@@ -714,11 +713,13 @@
 
                     </div>
 
+
                     <button id="enter-great-hall">
 
                         Enter The Great Hall
 
                     </button>
+
 
                 </div>
 
@@ -726,15 +727,17 @@
 
         </section>
 
+
         <!-- ======================
-            GREAT HALL
+            GREAT HALL HUB
         ====================== -->
 
         <section id="great-hall" class="scene">
 
             <div class="great-hall-container">
 
-                <img id="great-hall-image" src="./assets/images/hogwarts/hogwarts_gates.png" alt="Great Hall">
+                <img id="great-hall-image" src="./assets/images/hogwarts/great_hall_sunny.png"
+                    alt="Great Hall Enchanted Ceiling">
 
                 <div id="great-hall-ui">
 
@@ -748,15 +751,11 @@
 
                         Welcome to the Great Hall.
 
-                        Observe the enchanted ceiling.
+                        The enchanted ceiling changes with Hogwarts.
 
                     </div>
 
-                    <button id="observe-ceiling">
-
-                        Observe Ceiling
-
-                    </button>
+                    <!-- SORTING -->
 
                     <button id="go-to-sorting" class="hidden">
 
@@ -764,23 +763,77 @@
 
                     </button>
 
+                    <!-- HOGWARTS HUB -->
+
+                    <div id="hogwarts-destinations">
+
+                        <button id="go-to-library" class="hidden">
+
+                            Library
+
+                        </button>
+
+                        <button id="go-to-astronomy" class="hidden">
+
+                            Astronomy Tower
+
+                        </button>
+
+                        <button id="go-to-greenhouses" class="hidden">
+
+                            Greenhouses
+
+                        </button>
+
+                        <button id="go-to-quidditch" class="hidden">
+
+                            Quidditch
+
+                        </button>
+
+                    </div>
+
+                    <!-- MAP UNLOCK MESSAGE -->
+
+                    <div id="map-unlocked-message" class="hidden">
+
+                        ✨ The Marauder's Map has been unlocked!
+
+                    </div>
+
+                    <!-- MARAUDER'S MAP BUTTON -->
+
+                    <button id="marauders-map-button" class="hidden">
+
+                        🗺 Marauder's Map
+
+                    </button>
+
                 </div>
 
             </div>
 
         </section>
-
         <!-- ======================
             SORTING CEREMONY
         ====================== -->
 
         <section id="sorting" class="scene">
 
+
             <div class="sorting-container">
+
 
                 <img id="sorting-image" src="./assets/images/hogwarts/sorting_hat.png" alt="Sorting Hat">
 
+
+
+                <img id="house-banner" class="hidden" src="" alt="House Banner">
+
+
+
                 <div id="sorting-ui">
+
 
                     <h1>
 
@@ -788,41 +841,71 @@
 
                     </h1>
 
+
+
                     <div id="sorting-dialog">
+
 
                         The Sorting Hat is ready.
 
                         Place the hat and discover your House.
 
+
                     </div>
+
+
+
 
                     <button id="start-sorting">
 
+
                         Place The Sorting Hat
 
+
                     </button>
+
+
+
 
                     <div id="sorting-result" class="hidden">
 
                     </div>
 
+
+
+
                     <div id="sorting-actions" class="hidden">
+
 
                         <button id="accept-house">
 
+
                             Accept House
 
+
                         </button>
+
+
+
 
                         <button id="change-house">
 
+
                             Choose Another House
+
 
                         </button>
 
+
                     </div>
 
+
+
+
+
                     <div id="house-selection" class="hidden">
+
+
 
                         <button class="house-option" data-house="Gryffindor">
 
@@ -830,11 +913,15 @@
 
                         </button>
 
+
+
                         <button class="house-option" data-house="Ravenclaw">
 
                             Ravenclaw
 
                         </button>
+
+
 
                         <button class="house-option" data-house="Hufflepuff">
 
@@ -842,9 +929,270 @@
 
                         </button>
 
+
+
                         <button class="house-option" data-house="Slytherin">
 
                             Slytherin
+
+                        </button>
+
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+        <!-- ======================
+            ASTRONOMY TOWER
+        ====================== -->
+
+        <section id="astronomy" class="scene">
+
+
+            <div class="astronomy-container">
+
+
+                <img id="astronomy-image" src="./assets/images/hogwarts/astronomy_tower.png" alt="Astronomy Tower">
+                <div id="astronomy-ui">
+                    <h1>
+                        Astronomy Tower
+                    </h1>
+                    <div id="astronomy-dialog">
+                        The night sky above Hogwarts is waiting.
+                    </div>
+
+                    <!-- START EXPERIENCE -->
+                    <button id="use-telescope">
+                        Use Telescope
+                    </button>
+
+                    <!-- CONSTELLATIONS -->
+                    <div id="constellation-section" class="hidden">
+                        <h2>
+                            Discover The Constellations
+                        </h2>
+
+                        <div id="constellation-display">
+
+                            <button class="constellation-option" data-constellation="Phoenix">
+                                ✦ Phoenix
+                            </button>
+
+                            <button class="constellation-option" data-constellation="Dragon">
+                                ✦ Dragon
+                            </button>
+
+                            <button class="constellation-option" data-constellation="Hippogriff">
+                                ✦ Hippogriff
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- MAGIC EVENT -->
+                    <div id="magic-event-section" class="hidden">
+                        <h2>
+                            Magical Astronomical Event
+                        </h2>
+
+                        <div id="magic-event-content">
+                            A strange magical phenomenon appears in the sky.
+                        </div>
+                        <button id="observe-event">
+                            Observe Event
+                        </button>
+                    </div>
+
+                    <!-- RETURN -->
+                    <button id="astronomy-return-great-hall" class="hidden">
+                        Return To Great Hall
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================
+            LIBRARY
+        ====================== -->
+
+        <section id="library" class="scene">
+
+            <div class="library-container">
+
+                <img id="library-image" src="./assets/images/hogwarts/library.png" alt="Hogwarts Library">
+
+                <div id="library-ui">
+
+                    <h1>
+
+                        Hogwarts Library
+
+                    </h1>
+
+                    <div id="library-dialog">
+
+                        Thousands of ancient books surround you.
+
+                        Somewhere among them lies the history of Hogwarts.
+
+                    </div>
+
+                    <!-- ======================
+                        SEARCH BOOK
+                    ====================== -->
+
+                    <button id="search-book">
+
+                        Search the Shelves
+
+                    </button>
+
+                    <!-- ======================
+                        BOOK FOUND
+                    ====================== -->
+
+                    <div id="library-book" class="hidden">
+
+                        <img id="found-book-image" src="./assets/images/hogwarts/founders_book.png" alt="Founders Book">
+
+                        <button id="open-book">
+
+                            Open the Book
+
+                        </button>
+
+                    </div>
+
+                    <!-- ======================
+                        STORY
+                    ====================== -->
+
+                    <div id="book-story" class="hidden">
+
+                        <h2>
+
+                            The Four Founders
+
+                        </h2>
+
+                        <p>
+
+                            Long before Harry Potter arrived at Hogwarts,
+                            four extraordinary witches and wizards founded
+                            the greatest school of magic ever known.
+
+                        </p>
+
+                        <p>
+
+                            Godric Gryffindor valued bravery.
+
+                            Rowena Ravenclaw admired wisdom.
+
+                            Helga Hufflepuff welcomed loyalty.
+
+                            Salazar Slytherin prized ambition.
+
+                        </p>
+
+                        <button id="continue-reading">
+
+                            Continue
+
+                        </button>
+
+                    </div>
+
+                    <!-- ======================
+                        RIDDLE
+                    ====================== -->
+
+                    <div id="library-riddle" class="hidden">
+
+                        <h2>
+
+                            Ancient Riddle
+
+                        </h2>
+
+                        <p id="library-question">
+
+                            Question
+
+                        </p>
+
+                        <button class="library-answer" data-answer="gryffindor">
+
+                            Godric Gryffindor
+
+                        </button>
+
+                        <button class="library-answer" data-answer="ravenclaw">
+
+                            Rowena Ravenclaw
+
+                        </button>
+
+                        <button class="library-answer" data-answer="slytherin">
+
+                            Salazar Slytherin
+
+                        </button>
+
+                    </div>
+
+                    <!-- ======================
+                        SUCCESS
+                    ====================== -->
+
+                    <div id="library-success" class="hidden">
+
+                        <h2>
+
+                            Correct!
+
+                        </h2>
+                        <p>
+                            The ancient book recognizes your wisdom.
+
+                            Another fragment of the Marauder's Map has been revealed.
+                        </p>
+                        <button id="library-return-great-hall">
+                            Return To Great Hall
+                        </button>
+                    </div>
+
+                    <!-- ======================
+                        FAIL
+                    ====================== -->
+
+                    <div id="library-fail" class="hidden">
+
+                        <h2>
+
+                            Wrong Answer
+
+                        </h2>
+
+                        <p>
+
+                            The enchanted book closes itself and disappears
+                            among the shelves.
+
+                            You must search for it again.
+
+                        </p>
+
+                        <button id="search-again">
+
+                            Search Again
 
                         </button>
 
@@ -856,27 +1204,69 @@
 
         </section>
 
-        <!-- ======================
-         ASTRONOMY
-    ======================= -->
-
-        <section id="astronomy" class="scene">
-
-        </section>
 
         <!-- ======================
-         FOREST
+         greenhouses
     ======================= -->
 
-        <section id="forest" class="scene">
+        <section id="greenhouses" class="scene">
 
-        </section>
+            <div class="greenhouses-container">
 
-        <!-- ======================
-         INSECTARIUM
-    ======================= -->
+                <img id="greenhouses-image" src="./assets/images/hogwarts/greenhouses.png" alt="Greenhouses">
 
-        <section id="insectarium" class="scene">
+                <div id="greenhouses-ui">
+
+                    <h1>Greenhouses</h1>
+
+                    <div id="greenhouses-dialog">
+                        Professor Sprout needs help identifying magical plants.
+                    </div>
+
+                    <!-- START -->
+                    <button id="start-greenhouse">
+                        Start Lesson
+                    </button>
+
+                    <!-- GAME AREA -->
+                    <div id="greenhouse-game" class="hidden">
+
+                        <h2>Select the correct plant</h2>
+
+                        <div id="plant-options">
+
+                            <button class="plant-option" data-plant="mandrake">
+                                Mandrake
+                            </button>
+
+                            <button class="plant-option" data-plant="devils-snare">
+                                Devil's Snare
+                            </button>
+
+                            <button class="plant-option" data-plant="venomous-tentacula">
+                                Venomous Tentacula
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <!-- RESULT -->
+                    <div id="greenhouse-result" class="hidden">
+
+                        <h2 id="greenhouse-result-title"></h2>
+
+                        <p id="greenhouse-result-text"></p>
+
+                        <button id="return-great-hall-greenhouse">
+                            Return To Great Hall
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
 
         </section>
 
@@ -886,13 +1276,56 @@
 
         <section id="quidditch" class="scene">
 
-        </section>
+            <div class="quidditch-container">
 
-        <!-- ======================
-         CHAMBER
-    ======================= -->
+                <img id="quidditch-image" src="./assets/images/hogwarts/quidditch_pitch.png" alt="Quidditch Pitch">
 
-        <section id="chamber" class="scene">
+                <div id="quidditch-ui">
+
+                    <h1>Quidditch Pitch</h1>
+
+                    <div id="quidditch-dialog">
+                        Madam Hooch invites you to your first Quidditch practice.
+                        Catch the Golden Snitch before it escapes.
+                    </div>
+
+                    <!-- START -->
+
+                    <button id="start-quidditch">
+                        Start Training
+                    </button>
+
+                    <!-- GAME -->
+
+                    <div id="quidditch-game" class="hidden">
+
+                        <div id="snitch-counter">
+                            Snitches Caught: 0 / 5
+                        </div>
+
+                        <button id="golden-snitch">
+                            ✨
+                        </button>
+
+                    </div>
+
+                    <!-- RESULT -->
+
+                    <div id="quidditch-result" class="hidden">
+
+                        <h2 id="quidditch-result-title"></h2>
+
+                        <p id="quidditch-result-text"></p>
+
+                        <button id="return-great-hall-quidditch">
+                            Return To Great Hall
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
 
         </section>
 
@@ -901,6 +1334,42 @@
     ======================= -->
 
         <section id="marauders-map" class="scene">
+
+            <div class="map-background">
+
+                <img id="marauders-map-image" src="./assets/images/hogwarts/marauders-map.png" alt="Marauder's Map">
+
+                <div id="map-overlay">
+
+                    <h1>Marauder's Map</h1>
+
+                    <div id="map-dialog">
+                        Say the magic words...
+                    </div>
+
+                    <button id="open-map">
+                        I solemnly swear that I am up to no good.
+                    </button>
+
+                    <div id="map-content" class="hidden">
+
+                        <div id="footprints"></div>
+
+                        <div id="chamber-marker" class="hidden"></div>
+
+                        <div id="map-message" class="hidden">
+                            The Chamber of Secrets awaits...
+                        </div>
+
+                    </div>
+
+                    <button id="close-map" class="hidden">
+                        Mischief Managed.
+                    </button>
+
+                </div>
+
+            </div>
 
         </section>
 

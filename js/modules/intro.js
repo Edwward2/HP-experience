@@ -53,10 +53,7 @@ function initializeIntro() {
 function createStars() {
 
     const container =
-
-        document.querySelector(
-            '#stars-container'
-        );
+        document.querySelector('#stars-container');
 
     if (!container) return;
 
@@ -69,42 +66,30 @@ function createStars() {
     for (let i = 0; i < 250; i++) {
 
         const star =
+            document.createElement('div');
 
-            document.createElement(
-                'div'
-            );
+        star.classList.add('star');
 
-        star.classList.add(
-            'star'
+        const size = (Math.random() * 3) + 1;
+
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+
+        star.style.left = `${Math.random() * 100}%`;
+        star.style.top = `${Math.random() * 100}%`;
+
+        const duration = (2 + Math.random() * 5).toFixed(2);
+
+        star.style.setProperty(
+            '--twinkle-duration',
+            `${duration}s`
         );
-
-        const size =
-            (Math.random() * 3) + 1;
-
-        star.style.width =
-            `${size}px`;
-
-        star.style.height =
-            `${size}px`;
-
-        star.style.left =
-            `${Math.random() * 100}%`;
-
-        star.style.top =
-            `${Math.random() * 100}%`;
-
-        star.style.animationDuration =
-            `${2 + Math.random() * 5}s`;
 
         star.style.animationDelay =
             `${Math.random() * 4}s`;
 
-        container.appendChild(
-            star
-        );
-
+        container.appendChild(star);
     }
-
 }
 
 /* =========================

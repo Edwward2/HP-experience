@@ -4,7 +4,7 @@ import {
 from '../managers/scene-manager.js';
 
 import {
-    completeStore
+    completeProgress
 }
 from '../core/game-state.js';
 
@@ -26,7 +26,7 @@ export function initArrival() {
 
 function startLakeJourney() {
 
-    completeStore(
+    completeProgress(
         'arrivalCompleted'
     );
 

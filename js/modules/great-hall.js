@@ -1,195 +1,180 @@
 import {
     changeScene
-}
-from '../managers/scene-manager.js';
+} from '../managers/scene-manager.js';
 
 import {
-    completeStore
-}
-from '../core/game-state.js';
+    completeProgress,
+    getProgress,
+    isMapUnlocked
+} from '../core/game-state.js';
+
+/* ==========================
+   GREAT HALL ATMOSPHERE
+========================== */
 
 const ceilingImages = [
-
-    './assets/images/hogwarts/hogwarts_gates.png',
-
     './assets/images/hogwarts/great_hall_sunny.png',
-
     './assets/images/hogwarts/great_hall_rain.png',
-
     './assets/images/hogwarts/great_hall_snow.png',
-
     './assets/images/hogwarts/great_hall_wint.png'
-
 ];
 
 const ceilingTexts = [
-
-    'Welcome to the Great Hall.',
-
     'Sunlight floods the enchanted ceiling.',
-
     'Rain clouds gather high above Hogwarts.',
-
     'Snow drifts silently across the ceiling.',
-
-    'Lightning flashes in the distance.'
-
+    'Lightning flashes above the Great Hall.'
 ];
 
-let currentImage = 0;
-
-let ceilingInterval = null;
+/* ==========================
+   INIT
+========================== */
 
 export function initGreatHall() {
 
-    document
-        .querySelector(
-            '#observe-ceiling'
-        )
-        ?.addEventListener(
-
-            'click',
-
-            startCeilingExperience
-
-        );
-
-}
-
-function startCeilingExperience() {
-
-    const button =
-
-        document.querySelector(
-            '#observe-ceiling'
-        );
-
-    button.disabled = true;
-
     changeCeiling();
 
-    ceilingInterval =
+    setupSortingButton();
 
-        setInterval(
+    unlockDestinations();
 
-            changeCeiling,
+    setupMaraudersMapButton();
 
-            3000
-
-        );
-
-    setTimeout(
-
-        finishCeilingExperience,
-
-        15000
-
-    );
+    completeProgress('greatHallVisited');
 
 }
+
+/* ==========================
+   CHANGE CEILING
+========================== */
 
 function changeCeiling() {
 
     const image =
-
-        document.querySelector(
-            '#great-hall-image'
-        );
+        document.querySelector('#great-hall-image');
 
     const dialog =
+        document.querySelector('#great-hall-dialog');
 
-        document.querySelector(
-            '#great-hall-dialog'
+    if (!image || !dialog) {
+        return;
+    }
+
+    const index =
+        Math.floor(
+            Math.random() * ceilingImages.length
         );
 
     image.src =
-
-        ceilingImages[
-            currentImage
-        ];
+        ceilingImages[index];
 
     dialog.textContent =
-
-        ceilingTexts[
-            currentImage
-        ];
-
-    currentImage++;
-
-    if (
-
-        currentImage >=
-        ceilingImages.length
-
-    ) {
-
-        currentImage = 0;
-
-    }
+        ceilingTexts[index];
 
 }
 
-function finishCeilingExperience() {
+/* ==========================
+   SORTING
+========================== */
 
-    clearInterval(
-        ceilingInterval
+function setupSortingButton() {
+
+    const button =
+        document.querySelector('#go-to-sorting');
+
+    if (!button) {
+        return;
+    }
+
+    const progress =
+        getProgress();
+
+    if (!progress.sortingCompleted) {
+
+        button.classList.remove('hidden');
+
+    }
+
+    button.addEventListener(
+        'click',
+        () => {
+            changeScene('sorting');
+        }
     );
 
-    completeStore(
-        'greatHallCompleted'
+}
+
+/* ==========================
+   HOGWARTS HUB
+========================== */
+
+function unlockDestinations() {
+
+    const destinations = {
+        'go-to-library': 'library',
+        'go-to-astronomy': 'astronomy',
+        'go-to-greenhouses': 'greenhouses',
+        'go-to-quidditch': 'quidditch'
+    };
+
+    Object.entries(destinations).forEach(
+
+        ([buttonId, scene]) => {
+
+            const button =
+                document.querySelector(
+                    `#${buttonId}`
+                );
+
+            if (!button) {
+                return;
+            }
+
+            button.classList.remove('hidden');
+
+            button.addEventListener(
+                'click',
+                () => {
+                    changeScene(scene);
+                }
+            );
+
+        }
+
     );
 
-    document
-        .querySelector(
-            '#great-hall-dialog'
-        )
-        .textContent =
+}
 
-        'The Sorting Hat awaits your arrival.';
+/* ==========================
+   MARAUDER'S MAP
+========================== */
 
-    document
-        .querySelector(
-            '#observe-ceiling'
-        )
-        .classList.add(
+function setupMaraudersMapButton() {
+
+    const button =
+        document.querySelector(
+            '#marauders-map-button'
+        );
+
+    if (!button) {
+        return;
+    }
+
+    if (isMapUnlocked()) {
+
+        button.classList.remove(
             'hidden'
         );
 
-    document
-        .querySelector(
-            '#great-hall-ui'
-        )
-        .insertAdjacentHTML(
+    }
 
-            'beforeend',
-
-            `
-            <button
-                id="go-to-sorting">
-
-                Approach The Sorting Hat
-
-            </button>
-            `
-
-        );
-
-    document
-        .querySelector(
-            '#go-to-sorting'
-        )
-        ?.addEventListener(
-
-            'click',
-
-            () => {
-
-                changeScene(
-                    'sorting'
-                );
-
-            }
-
-        );
+    button.addEventListener(
+        'click',
+        () => {
+            changeScene(
+                'marauders-map'
+            );
+        }
+    );
 
 }

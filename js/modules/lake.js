@@ -4,7 +4,7 @@ import {
 from '../managers/scene-manager.js';
 
 import {
-    completeStore
+    completeProgress
 }
 from '../core/game-state.js';
 
@@ -122,7 +122,7 @@ function finishLake() {
 
     interval = null;
 
-    completeStore(
+    completeProgress(
         'blackLakeCompleted'
     );
 

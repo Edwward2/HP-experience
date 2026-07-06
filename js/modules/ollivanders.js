@@ -5,7 +5,7 @@ from '../managers/scene-manager.js';
 
 import {
     setPlayerWand,
-    completeStore
+    completeProgress
 }
 from '../core/game-state.js';
 
@@ -221,7 +221,7 @@ function tryWand(
 
         );
 
-        completeStore(
+        completeProgress(
             'ollivandersCompleted'
         );
 

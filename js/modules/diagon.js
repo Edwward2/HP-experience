@@ -5,7 +5,7 @@ from '../managers/scene-manager.js';
 
 import {
     getProgress,
-    completeStore,
+    completeProgress,
     getPlayerWand
 }
 from '../core/game-state.js';
@@ -168,9 +168,9 @@ function enterDiagon() {
 
 const ollivandersButton =
 
-document.querySelector(
-    '#visit-ollivanders'
-);
+    document.querySelector(
+        '#visit-ollivanders'
+    );
 
 ollivandersButton?.addEventListener(
     'click',
@@ -297,19 +297,19 @@ function updateDiagonProgress() {
     ) {
 
         document.querySelector(
-            '#wand-status'
-        ).textContent =
+                '#wand-status'
+            ).textContent =
             'Wand: ✓';
 
     }
 
     if (
-    progress.petsCompleted
+        progress.petsCompleted
     ) {
 
         document.querySelector(
-            '#pet-status'
-        ).textContent =
+                '#pet-status'
+            ).textContent =
             'Pet: ✓';
 
     }
@@ -317,30 +317,30 @@ function updateDiagonProgress() {
     if (
         progress.weasleyCompleted
     ) {
-    
+
         document.querySelector(
-            '#item-status'
-        ).textContent =
+                '#item-status'
+            ).textContent =
             'Item: ✓';
-    
+
     }
     if (
 
-    progress.ollivandersCompleted &&
+        progress.ollivandersCompleted &&
 
-    progress.petsCompleted &&
+        progress.petsCompleted &&
 
-    progress.weasleyCompleted
+        progress.weasleyCompleted
 
     ) {
 
-    document
-        .querySelector(
-            '#station-access'
-        )
-        ?.classList.remove(
-            'hidden'
-        );
+        document
+            .querySelector(
+                '#station-access'
+            )
+            ?.classList.remove(
+                'hidden'
+            );
 
-}
+    }
 }

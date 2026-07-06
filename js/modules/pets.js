@@ -5,7 +5,7 @@ from '../managers/scene-manager.js';
 
 import {
     setPlayerPet,
-    completeStore,
+    completeProgress,
     getProgress
 }
 from '../core/game-state.js';
@@ -125,23 +125,23 @@ export function initPets() {
     ========================= */
 
     returnButton?.addEventListener(
-    
+
         'click',
-    
+
         () => {
-    
+
             console.log(
                 'RETURN TO DIAGON'
             );
-    
+
             changeScene(
                 'diagon'
             );
-    
+
         }
 
     );
-}    
+}
 
 /* =========================
    CHOOSE PET
@@ -171,7 +171,7 @@ function choosePet(
 
     );
 
-    completeStore(
+    completeProgress(
         'petsCompleted'
     );
 

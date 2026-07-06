@@ -4,7 +4,7 @@ import {
 from '../managers/scene-manager.js';
 
 import {
-    completeStore,
+    completeProgress,
     getProgress
 }
 from '../core/game-state.js';
@@ -197,7 +197,7 @@ function nextVision() {
 
 function completeWindowExperience() {
 
-    completeStore(
+    completeProgress(
         'trainWindowCompleted'
     );
 
@@ -327,7 +327,7 @@ function moveFrog() {
 
 function finishTrain() {
 
-    completeStore(
+    completeProgress(
         'trainFrogCompleted'
     );
 

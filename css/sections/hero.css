@@ -3,15 +3,11 @@
 ========================= */
 
 #intro {
-
     position: absolute;
-
     inset: 0;
-
     overflow: hidden;
 
     background:
-
         radial-gradient(
             circle at center,
             #1b2238 0%,
@@ -25,55 +21,37 @@
 ========================= */
 
 #moon {
-
     position: absolute;
-
     top: 80px;
-
     right: 100px;
-
     width: 220px;
 
-    opacity: .95;
-
+    opacity: 0.95;
     z-index: 2;
 
+    transform-origin: center;
+
     animation:
-        moonGlow 6s ease-in-out infinite;
+        moonGlow 6s ease-in-out infinite,
+        moonFloat 18s ease-in-out infinite;
 
     filter:
-
-        drop-shadow(
-            0 0 30px
-            rgba(255,255,255,.25)
-        )
-
-        drop-shadow(
-            0 0 80px
-            rgba(255,255,255,.08)
-        );
+        drop-shadow(0 0 30px rgba(255,255,255,.25))
+        drop-shadow(0 0 80px rgba(255,255,255,.08));
 }
 
-@keyframes moonGlow {
-
+@keyframes moonFloat {
     0% {
-
-        transform: scale(1);
-
+        transform: translateY(0px) rotate(-1deg);
     }
 
     50% {
-
-        transform: scale(1.03);
-
+        transform: translateY(10px) rotate(2deg);
     }
 
     100% {
-
-        transform: scale(1);
-
+        transform: translateY(0px) rotate(-1deg);
     }
-
 }
 
 /* =========================
@@ -81,13 +59,9 @@
 ========================= */
 
 #stars-container {
-
     position: absolute;
-
     inset: 0;
-
     overflow: hidden;
-
     z-index: 1;
 }
 
@@ -96,37 +70,35 @@
 ========================= */
 
 .star {
-
     position: absolute;
-
     background: white;
-
     border-radius: 50%;
 
+    opacity: 0.2;
+
     animation:
-        twinkle linear infinite;
+        twinkle var(--twinkle-duration, 4s) ease-in-out infinite;
+
+    filter: blur(0.3px);
+
+    will-change: opacity, transform;
 }
 
 @keyframes twinkle {
-
     0% {
-
-        opacity: .15;
-
+        opacity: 0.15;
+        transform: scale(0.8);
     }
 
     50% {
-
         opacity: 1;
-
+        transform: scale(1.4);
     }
 
     100% {
-
-        opacity: .15;
-
+        opacity: 0.15;
+        transform: scale(0.9);
     }
-
 }
 
 /* =========================
@@ -134,36 +106,31 @@
 ========================= */
 
 .fog {
-
     position: absolute;
-
     inset: 0;
 
-    opacity: .15;
+    opacity: 0.12;
 
-    filter: blur(60px);
+    filter: blur(80px);
 
     pointer-events: none;
-
     z-index: 3;
-}
 
+    mix-blend-mode: screen;
+}
 /* =========================
    FOG LAYER 1
 ========================= */
 
 .fog-1 {
-
     background:
-
         radial-gradient(
-            circle at center,
-            rgba(255,255,255,.25),
+            circle at 40% 40%,
+            rgba(255,255,255,.22),
             transparent 70%
         );
 
-    animation:
-        fogMove1 25s linear infinite;
+    animation: fogMove1 30s ease-in-out infinite;
 }
 
 /* =========================
@@ -171,57 +138,42 @@
 ========================= */
 
 .fog-2 {
-
     background:
-
         radial-gradient(
-            circle at center,
-            rgba(255,255,255,.18),
+            circle at 60% 60%,
+            rgba(255,255,255,.16),
             transparent 70%
         );
 
-    animation:
-        fogMove2 35s linear infinite;
+    animation: fogMove2 40s ease-in-out infinite;
 }
 
 @keyframes fogMove1 {
-
-    from {
-
-        transform:
-            translateX(-10%)
-            translateY(0);
-
+    0% {
+        transform: translate3d(-10%, 0, 0);
     }
 
-    to {
-
-        transform:
-            translateX(10%)
-            translateY(-2%);
-
+    50% {
+        transform: translate3d(10%, -2%, 0);
     }
 
+    100% {
+        transform: translate3d(-10%, 0, 0);
+    }
 }
 
 @keyframes fogMove2 {
-
-    from {
-
-        transform:
-            translateX(10%)
-            translateY(0);
-
+    0% {
+        transform: translate3d(10%, 0, 0);
     }
 
-    to {
-
-        transform:
-            translateX(-10%)
-            translateY(2%);
-
+    50% {
+        transform: translate3d(-10%, 2%, 0);
     }
 
+    100% {
+        transform: translate3d(10%, 0, 0);
+    }
 }
 
 /* =========================
@@ -229,50 +181,42 @@
 ========================= */
 
 #hedwig {
-
     position: absolute;
-
     left: 50%;
-
     top: 35%;
 
     width: 320px;
 
-    transform:
-        translateX(-50%);
+    transform: translateX(-50%);
 
-    transform-origin:
-        center center;
+    transform-origin: center center;
 
     z-index: 20;
 
-    will-change:
-        transform,
-        opacity;
-}
+    will-change: transform, opacity;
 
+    /* IMPORTANTE: base para animación futura */
+    filter:
+        drop-shadow(0 0 25px rgba(255,255,255,.15));
+
+    transition: none;
+}
 /* =========================
    FUTURE EFFECT LAYERS
 ========================= */
 
 .magic-particles {
-
     position: absolute;
-
     inset: 0;
-
     pointer-events: none;
-
     z-index: 15;
 }
 
 .magic-light {
-
     position: absolute;
-
     inset: 0;
-
     pointer-events: none;
-
     z-index: 12;
+
+    mix-blend-mode: screen;
 }
